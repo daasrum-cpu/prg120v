@@ -4,7 +4,7 @@
     klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
     klassenavn <input type="text" id="klassenavn" name="klassenavn" required /> <br/>
     studiumkode <input type="text" id="studiumkode" name="studiumkode" required /> <br/>
-    <input type="submit" value="registrer klasse" id="registrer klasseknapp" name="registrerklasseknapp" />
+    <input type="submit" value="registrer klasse" id="registrerklasseknapp" name="registrerklasseknapp" />
     <input type="reset" value="nulstill" id="nullstill" name="nulstill" /> <br/>
 </form>
 
@@ -27,8 +27,8 @@ if (isset($_POST['registrerklasseknapp'])) {
      }
      else {
          $sqlSetning = "INSERT INTO klasse (klassekode, klassenavn, studiumkode)
-            VALUES('$klassekode','$klassenavn');";
-         mysqli_query($db,$sqlSetning) or die ("ikke muligt å registyrere i databasen");
+            VALUES('$klassekode','$klassenavn','$studiumkode');";
+         mysqli_query($db,$sqlSetning) or die ("ikke muligt å registrere i databasen");
 
          print ("følgende klasse er nå lagt til $klassekode $klassenavn");
      }
