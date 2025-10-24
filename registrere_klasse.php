@@ -12,8 +12,9 @@
 if (isset($_POST['registrerklasseknapp'])) {
     $klassekode = $_POST['klassekode'];
     $klassenavn = $_POST['klassenavn'];
+    $studiumkode = $_POST['studiumkode'];
 
-    if (!$klassenavn || !$klassekode) {
+    if (!$klassenavn || !$klassekode || !$studiumkode) {
         print ("alle felt må fylles ut");
     }
     else {
@@ -30,7 +31,7 @@ if (isset($_POST['registrerklasseknapp'])) {
             VALUES('$klassekode','$klassenavn','$studiumkode');";
          mysqli_query($db,$sqlSetning) or die ("ikke muligt å registrere i databasen");
 
-         print ("følgende klasse er nå lagt til $klassekode $klassenavn");
+         print ("følgende klasse er nå lagt til $klassekode $klassenavn $studiumkode");
      }
     }
 }
