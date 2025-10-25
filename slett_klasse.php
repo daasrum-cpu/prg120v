@@ -1,4 +1,3 @@
-
 <h3>Slett Klasse</h3>
 
 <form method="post" action="" id="slettklasse" name="slettklasse" onSubmit="return bekreft()">
@@ -10,10 +9,12 @@
         $resultat = mysqli_query($db, $sql);
 
         print("<option value=''>velg klasse </option>);
-        while ($row = mysql_fetch_row($resultat)) {
-        $kode = $row['klassekode'];
-        print("<option value='$kode'>$kode</option>");
-}
+        while ($row = mysqli_fetch_assoc($resultat)) 
+        {
+          $kode = $row['klassekode'];
+         print("<option value='$kode'>$kode</option>");
+        }
+
 ?> 
 
 
