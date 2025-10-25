@@ -5,19 +5,15 @@
     <select name="klassekode" id="klassekode">
         <?php
         include("db-tilkobling.php");
-        $sql =  "SELECT klassekode FROM klasse ORDER BY klassekode;";
+        $sql = "SELECT klassekode FROM klasse ORDER BY klassekode;";
         $resultat = mysqli_query($db, $sql);
 
-        print("<option value=''>velg klasse </option>);
-        while ($row = mysqli_fetch_assoc($resultat)) 
-        {
-          $kode = $row['klassekode'];
-         print("<option value='$kode'>$kode</option>");
+        print("<option value=''>velg klasse</option>");
+        while ($row = mysqli_fetch_assoc($resultat)) {
+            $kode = $row['klassekode'];
+            print("<option value='$kode'>$kode</option>");
         }
-
-?> 
-
-
+        ?>
     </select> <br/>
     <input type="submit" value="Slett klasse" name="slettklasse" id="slettklasse" />
 </form>
