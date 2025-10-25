@@ -17,9 +17,10 @@ for ($r=1;$r<=$antallRader;$r++)
     $rad=mysqli_fetch_array($sqlResultat);
     $Fornavn=$rad['Fornavn'];
     $brukernavn=$rad['brukernavn'];
-    $Etternavn=$rad['studiumkode'];
-    $Klassekode=$rad['klassekode'];
-    print("<tr><td>$brukernavn</td><td>$Fornavn</td><td>$Etternavn</td><td>$klassekode</td></tr>");
+    $etternavn=$rad['studiumkode'];
+    $klassekode=$rad['klassekode'];
+
+    print("<tr><td>$brukernavn</td><td>$Fornavn</td><td>$etternavn</td><td>$klassekode</td></tr>");
 }
 print ("</tabel>");
 
