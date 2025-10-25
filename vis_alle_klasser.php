@@ -4,7 +4,7 @@
 include("db-tilkobling.php");
 
 $sqlSetning = "SELECT * FROM klassen ORDER BY klassen_id;";
-$sqlResultat = mysqli_query($sqlSetning) or die ("ikke muligt å henta data fra databasen");
+$sqlResultat = mysqli_query($db, $sqlSetning) or die ("ikke muligt å henta data fra databasen");
 
 $antallRader = mysqli_num_rows($sqlResultat);
 
