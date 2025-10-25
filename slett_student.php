@@ -1,3 +1,6 @@
+
+<link rel="stylesheet" href="style.css">
+
 <h3>Slett Student</h3>
 
 <form method="post" action="" id="slettstudent" name="slettstudent" onSubmit="return bekreft()">

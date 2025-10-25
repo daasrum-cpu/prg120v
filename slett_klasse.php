@@ -1,3 +1,6 @@
+
+<link rel="stylesheet" href="style.css">
+
 <h3>Slett Klasse</h3>
 
 <form method="post" action="" id="slettklasse" name="slettklasse" onSubmit="return bekreft()">
