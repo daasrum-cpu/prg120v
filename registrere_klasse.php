@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="style.css">
+
+
+
 <h2>Registrer klasse</h2>
 
 <form method="post" action="" id="registrer_klasse_skjema" name="registrer_klasse_skjema">
