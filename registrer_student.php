@@ -1,7 +1,7 @@
 <h2>Registrer student</h2>
 
 <form method="post" action="" id="registrer_student_skjema" name="registrer_student_skjema">
-    brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
+    brukernavn <input type="text" id="brukernavn" name="brukernavn" maxlength="7" required /> <br/>
     fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
     etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
     klassekode:
