@@ -15,7 +15,7 @@
         }
         ?>
     </select> <br/>
-    <input type="submit" value="brukernavn" name="brukernavn" id="brukernavn" />
+    <input type="submit" value="Slett student" name="slettstudent" id="slettstudentknapp" />
 </form>
 
 <?php
@@ -23,7 +23,7 @@ if (isset($_POST['slettstudent'])) {
     $brukernavn=$_POST['brukernavn'];
 
     if (!$brukernavn) {
-        print ("det er ikke valgt en klasse");
+        print ("det er ikke valgt en bruker");
 
     }
     else
