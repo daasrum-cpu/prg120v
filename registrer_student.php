@@ -4,6 +4,17 @@
     brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
     fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
     etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
+    <select name="klassekode" required>
+        <?php
+        $sql = "SELECT klassekode FROM klasse ORDER BY klassekode;";
+        $resultat = mysqli_query($db, $sql);
+        while ($rad = mysqli_fetch_assoc($resultat)) {
+            $kode = $rad['klassekode'];
+            print("<option value='$kode'>$kode</option>");
+        }
+        ?>
+    </select>
+
     <input type="submit" value="registrer student" id="registrerstudentknapp" name="registrerstudentknapp" />
     <input type="reset" value="nulstill" id="nullstill" name="nulstill" /> <br/>
 </form>
