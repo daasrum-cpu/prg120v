@@ -1,11 +1,7 @@
 <h3>Slett Klasse</h3>
 
-<form method="post" action="" id="slettklasse" name="slettklasse" onSubmit="function bekreft()">
-    <script>
-        function bekreft() {
-            return confirm("Er du dikker på at du vil slette denne klassen?");
-        }
-    </script>
+<form method="post" action="" id="slettklasse" name="slettklasse" onSubmit="return bekreft()">
+
     klasse
     <select name="klassekode" id="klassekode">
         <?php
@@ -22,6 +18,12 @@
     </select> <br/>
     <input type="submit" value="Slett klasse" name="slettklasse" id="slettklasse" />
 </form>
+
+<script>
+    function bekreft() {
+        return confirm("Er du dikker på at du vil slette denne klassen?");
+    }
+</script>
 
 <?php
  if (isset($_POST['slettklasse'])) {
