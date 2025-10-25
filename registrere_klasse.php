@@ -20,7 +20,7 @@ if (isset($_POST['registrerklasseknapp'])) {
     else {
         include("db-tilkobling.php");
      $sqlSetning = "SELECT * FROM klasse WHERE klassekode = '$klassekode';";
-     $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig å hente data fra databasen");
+     $sqlResultat=mysqli_query($sqlSetning) or die ("ikke mulig å hente data fra databasen");
      $antallRader=mysqli_num_rows($sqlResultat);
 
      if ($antallRader!=0) {
