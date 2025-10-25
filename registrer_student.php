@@ -51,7 +51,7 @@ if (isset($_POST['registrerstudentknapp'])) {
             VALUES('$brukernavn','$fornavn','$etternavn', '$klassekode' );";
             mysqli_query($db,$sqlSetning) or die ("ikke muligt å registrere i databasen");
 
-            print ("følgende student er nå lagt til $fornavn $etternavn");
+            print ("Følgende student er nå lagt til $fornavn $etternavn i klasse $klassekode");
         }
     }
 }
