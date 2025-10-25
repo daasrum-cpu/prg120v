@@ -1,6 +1,6 @@
 <h3>Slett Klasse</h3>
 
-<form method="post" action="" id="slettklasse" name="slettklasse" onSubmit="return bekreft()">
+<form method="post" action="" id="slettklasse" name="slettklasse" onSubmit="return bekreft();">
     klasse
     <select name="klassekode" id="klassekode">
         <?php
@@ -24,14 +24,19 @@
 
      if (!$klassekode) {
          print ("det er ikke valgt en klasse");
-
-     }
-     else
-     {
+     } else {
          include("db-tilkobling.php");
-         $sqlsetning = "DELETE FROM klasse WHERE klassekode = '$klassekode';";
-         mysqli_query($db,$sqlsetning) or die ("ikke muligt å slette data fra databasen");
 
-         print("følgende klasse er slettet: $klassekode");
+         $sjekk = "SELECT * FROM student WHERE klassekode='$klassekode';";
+         $resultat = mysqli_query($db, $sjekk);
+
+         if (mysqli_num_rows($resultat) > 0) {
+            print("Kan ikek slette klasse - Det finnes studenter i denne klassen");
+         } else {
+            $sqlsetning = "DELETE FROM klasse WHERE klassekode = '$klassekode';";
+            mysqli_query($db,$sqlsetning) or die ("Ikke muligt å slette data fra databasen");
+
+            print("Følgende klasse er slettet: $klassekode");
+         }
      }
  }
