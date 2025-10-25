@@ -15,11 +15,11 @@
         }
         ?>
     </select> <br/>
-    <input type="submit" value="Slettstudent" name="slettstudent" id="slettstudent" />
+    <input type="submit" value="brukernavn" name="brukernavn" id="brukernavn" />
 </form>
 
 <?php
-if (isset($_POST['slettklasse'])) {
+if (isset($_POST['slettstudent'])) {
     $brukernavn=$_POST['brukernavn'];
 
     if (!$brukernavn) {
