@@ -12,7 +12,7 @@ if (isset($_POST['registrerstudentknapp'])) {
     $studentkode = $_POST['studentkode'];
     $studentnavn = $_POST['studentnavn'];
 
-    if (!$studentnavn || !$studentkode || !$) {
+    if (!$studentnavn || !$studentkode) {
         print ("alle felt må fylles ut");
     }
     else {
@@ -25,11 +25,11 @@ if (isset($_POST['registrerstudentknapp'])) {
             print ("studentn finnes fra før");
         }
         else {
-            $sqlSetning = "INSERT INTO student (studentkode, studentnavn, )
+            $sqlSetning = "INSERT INTO student (studentkode, studentnavn)
             VALUES('$studentkode','$studentnavn','$');";
             mysqli_query($db,$sqlSetning) or die ("ikke muligt å registrere i databasen");
 
-            print ("følgende student er nå lagt til $studentkode $studentnavn $");
+            print ("følgende student er nå lagt til $studentkode $studentnavn");
         }
     }
 }
