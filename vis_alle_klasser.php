@@ -3,7 +3,7 @@
 
 include("db-tilkobling.php");
 
-$sqlSetning = "SELECT * FROM klasse ORDER BY klassen_id;";
+$sqlSetning = "SELECT * FROM klasse ORDER BY klasse_id;";
 $sqlResultat = mysqli_query($db, $sqlSetning) or die ("ikke muligt å henta data fra databasen");
 
 $antallRader = mysqli_num_rows($sqlResultat);
