@@ -18,6 +18,7 @@ for ($r=1;$r<=$antallRader;$r++)
     $klassenavn=$rad['klassenavn'];
     $klassekode=$rad['klassekode'];
     $studiumkode=$rad['studiumkode'];
+    print("<tr><td>$klassekode</td><td>$klassenavn</td><td>$studiumkode</td></tr>");
 }
 print ("</tabel>");
 
