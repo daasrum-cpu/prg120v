@@ -18,6 +18,12 @@
     <input type="submit" value="Slett student" name="slettstudent" id="slettstudentknapp" />
 </form>
 
+<script>
+    function bekreft() {
+        return confirm("Er du dikker på at du vil slette denne klassen?");
+    }
+</script>
+
 <?php
 if (isset($_POST['slettstudent'])) {
     $brukernavn=$_POST['brukernavn'];
