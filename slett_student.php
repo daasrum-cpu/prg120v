@@ -1,1 +1,37 @@
+<h3>Slett Student</h3>
+
+<form method="post" action="" id="slettstudent" name="slettstudent" onSubmit="return bekreft()">
+    student
+    <select name="brukernavn" id="brukernavn">
+        <?php
+        include("db-tilkobling.php");
+        $sql = "SELECT brukernavn FROM student ORDER BY klassekode;";
+        $resultat = mysqli_query($db, $sql);
+
+        print("<option value=''>velg brukernavn</option>");
+        while ($row = mysqli_fetch_assoc($resultat)) {
+            $kode = $row['brukernavn'];
+            print("<option value='$kode'>$kode</option>");
+        }
+        ?>
+    </select> <br/>
+    <input type="submit" value="Slettstudent" name="slettstudent" id="slettstudent" />
+</form>
+
 <?php
+if (isset($_POST['slettklasse'])) {
+    $brukernavn=$_POST['brukernavn'];
+
+    if (!$brukernavn) {
+        print ("det er ikke valgt en klasse");
+
+    }
+    else
+    {
+        include("db-tilkobling.php");
+        $sqlsetning = "DELETE FROM student WHERE brukernavn = '$brukernavn';";
+        mysqli_query($db,$sqlsetning) or die ("ikke muligt å slette data fra databasen");
+
+        print("følgende student er slettet: $brukernavn");
+    }
+}
